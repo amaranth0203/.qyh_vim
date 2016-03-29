@@ -1,5 +1,4 @@
 set encoding=utf-8
-set termencoding=gbk
 let $LANG='zh_CN.UTF-8'
 set guifont=Consolas:h14:b:cANSI
 set guioptions-=m
@@ -45,9 +44,11 @@ nnoremap <c-\> :nohlsearch<cr>
 if has( "win32" ) || has( "win16" )
     nnoremap <A-j> jzz
     nnoremap <A-k> kzz
+    set termencoding=gbk
 else
     nnoremap <esc>j jzz
     nnoremap <esc>k kzz
+    set termencoding=utf-8
 endif
 nnoremap % %zz
 
