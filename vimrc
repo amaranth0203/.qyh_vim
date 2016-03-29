@@ -34,7 +34,8 @@ nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " for NERD Commenter
-autocmd VimEnter * :filetype plugin on
+"autocmd VimEnter * :filetype plugin on
+autocmd BufRead * :filetype plugin on
 
 set showcmd
 set title
@@ -57,5 +58,5 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-
+let mapleader=","
 
