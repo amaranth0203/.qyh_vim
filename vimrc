@@ -42,12 +42,16 @@ set hlsearch
 set incsearch
 nnoremap <c-\> :nohlsearch<cr>
 if has( "win32" ) || has( "win16" )
-    nnoremap <A-j> jzz
-    nnoremap <A-k> kzz
+    nnoremap <A-j> j
+    nnoremap <A-k> k
+    nnoremap j j<C-e>
+    nnoremap k k<C-y>
     set termencoding=gbk
 else
-    nnoremap <esc>j jzz
-    nnoremap <esc>k kzz
+    nnoremap <esc>j j
+    nnoremap <esc>k k
+    nnoremap j j<C-e>
+    nnoremap k k<C-y>
     set termencoding=utf-8
 endif
 nnoremap % %zz
@@ -60,4 +64,6 @@ let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
 let mapleader=","
+
+
 
