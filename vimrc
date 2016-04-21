@@ -43,22 +43,18 @@ set showcmd
 set title
 set hlsearch
 set incsearch
+nnoremap j j<C-e>
+nnoremap k k<C-y>
+nnoremap <c-\> :set nohlsearch<cr>
+nnoremap * *<S-n>:set hls<cr>
 if has( "win32" ) || has( "win16" )
     nnoremap <A-j> j
     nnoremap <A-k> k
-    nnoremap j j<C-e>
-    nnoremap k k<C-y>
     set termencoding=gbk
-    nnoremap <c-\> :set nohlsearch<cr>
-    nnoremap <A-\> :set hlsearch<cr>
 else
     nnoremap <esc>j j
     nnoremap <esc>k k
-    nnoremap j j<C-e>
-    nnoremap k k<C-y>
     set termencoding=utf-8
-    nnoremap <c-\> :set nohlsearch<cr>
-    nnoremap <esc>\ :set hlsearch<cr>
 endif
 nnoremap % %zz
 
@@ -69,6 +65,7 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+
 
 
 
