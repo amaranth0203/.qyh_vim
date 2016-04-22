@@ -46,7 +46,7 @@ set incsearch
 nnoremap j j<C-e>
 nnoremap k k<C-y>
 nnoremap <c-\> :set nohlsearch<cr>
-nnoremap * *<S-n>:set hls<cr>
+nnoremap * *<S-n>:set hls<cr>zz
 if has( "win32" ) || has( "win16" )
     nnoremap <A-j> j
     nnoremap <A-k> k
@@ -65,6 +65,7 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+
 
 
 
