@@ -43,8 +43,14 @@ set showcmd
 set title
 set hlsearch
 set incsearch
-nnoremap j j<C-e>
-nnoremap k k<C-y>
+function Qyh_j( )
+    if line( '.' ) > winheight( 0 ) / 2
+        return "j"
+    else
+        return "j"
+endfunction
+nnoremap <expr>j Qyh_j( ) 
+nnoremap k k
 nnoremap <c-\> :set nohlsearch<cr>
 nnoremap * *<S-n>:set hls<cr>zz
 if has( "win32" ) || has( "win16" )
@@ -65,7 +71,6 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-
 
 
 
