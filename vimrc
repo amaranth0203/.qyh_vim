@@ -39,6 +39,9 @@ let NERDSpaceDelims=1
 " for paste mutiple lines from putty
 au BufRead * :set formatoptions-=cro
 
+" for syntastic to check html inside php file
+au BufRead,BufNewFile *.php set filetype=php.html
+
 set showcmd
 set title
 set hlsearch
@@ -71,8 +74,6 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-
-
 
 
 
