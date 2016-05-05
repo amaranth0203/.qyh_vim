@@ -70,6 +70,8 @@ nmap <leader>tl :TlistToggle<cr>
 
 " for NERDTree
 nmap <leader>ne :NERDTreeToggle<cr>
+nmap <leader>nec :ClearBookmarks 
+nmap <leader>neb :Bookmark 
 
 " for NERD Commenter
 au BufRead * :filetype plugin on
