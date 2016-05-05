@@ -78,6 +78,7 @@ let NERDSpaceDelims=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '-'
 let g:airline#extensions#tabline#right_sep = '-'
+set laststatus=2
 
 function! AutoLoadCTagsAndCScope()
     let max = 10
