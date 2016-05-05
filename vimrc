@@ -23,34 +23,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" for Cscope
-nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-
-" for TList
-nmap <leader>tl :TlistToggle<cr>
-
-" for NERDTree
-nmap <leader>ne :NERDTreeToggle<cr>
-
-" for NERD Commenter
-au BufRead * :filetype plugin on
-let NERDSpaceDelims=1
-
-" for paste mutiple lines to putty
-au BufRead * :set formatoptions-=cro
-
-" for airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = '-'
-let g:airline#extensions#tabline#right_sep = '-'
-
 set showcmd
 set title
 set hlsearch
@@ -81,6 +53,31 @@ else
     set termencoding=utf-8
 endif
 nnoremap % %zz
+
+" for Cscope
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+" for TList
+nmap <leader>tl :TlistToggle<cr>
+
+" for NERDTree
+nmap <leader>ne :NERDTreeToggle<cr>
+
+" for NERD Commenter
+au BufRead * :filetype plugin on
+let NERDSpaceDelims=1
+
+" for airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '-'
+let g:airline#extensions#tabline#right_sep = '-'
 
 function! AutoLoadCTagsAndCScope()
     let max = 10
