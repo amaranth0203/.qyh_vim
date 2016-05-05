@@ -69,7 +69,8 @@ nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 nmap <leader>tl :TlistToggle<cr>
 
 " for NERDTree
-nmap <leader>ne :NERDTreeToggle<cr>
+nmap <leader>ne :NERDTree<cr>
+nmap <leader>net :NERDTreeToggle<cr>
 nmap <leader>nec :ClearBookmarks 
 nmap <leader>neb :Bookmark 
 
