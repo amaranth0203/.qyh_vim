@@ -39,6 +39,11 @@ let NERDSpaceDelims=1
 " for paste mutiple lines from putty
 au BufRead * :set formatoptions-=cro
 
+" for airline
+let g:airline#extensions#tabline#enabled = 1
+nmap <leader>1 :bp<cr>
+nmap <leader>2 :bn<cr>
+
 set showcmd
 set title
 set hlsearch
@@ -71,7 +76,6 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-
 
 
 

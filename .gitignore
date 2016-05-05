@@ -2,3 +2,6 @@
 *.swp
 tags
 .DS_Store
+doc/tags
+*.lock
+.vim-flavor
