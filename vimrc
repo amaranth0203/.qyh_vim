@@ -44,8 +44,6 @@ au BufRead * :set formatoptions-=cro
 
 " for airline
 let g:airline#extensions#tabline#enabled = 1
-nmap <leader>1 :bp<cr>
-nmap <leader>2 :bn<cr>
 let g:airline#extensions#tabline#left_sep = '-'
 let g:airline#extensions#tabline#right_sep = '-'
 
@@ -97,11 +95,15 @@ if has( "win32" ) || has( "win16" )
     nnoremap <A-j> j
     nnoremap <A-k> k
     nnoremap <A-\> :set hls<cr>
+    nmap <A-p> :bp<cr>
+    nmap <A-n> :bn<cr>
     set termencoding=gbk
 else
     nnoremap <esc>j j
     nnoremap <esc>k k
     nnoremap <esc>\ :set hls<cr>
+    nmap <esc>p :bp<cr>
+    nmap <esc>n :bn<cr>
     set termencoding=utf-8
 endif
 nnoremap % %zz
