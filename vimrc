@@ -53,6 +53,7 @@ else
     set termencoding=utf-8
 endif
 nnoremap % %zz
+set nowrap
 
 " for Cscope
 nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
