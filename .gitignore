@@ -5,3 +5,5 @@ tags
 doc/tags
 *.lock
 .vim-flavor
+.netrwhist 
+.netrwhist 
