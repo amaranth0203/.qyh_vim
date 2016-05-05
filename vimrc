@@ -76,8 +76,6 @@ function! AutoLoadCTagsAndCScope()
     endwhile
 endf
 nmap <F7> :call AutoLoadCTagsAndCScope()<CR>
-" call AutoLoadCTagsAndCScope()
-" http://vifix.cn/blog/vim-auto-load-ctags-and-cscope.html
 
 set showcmd
 set title
@@ -111,7 +109,3 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-
-
-
-
