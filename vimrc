@@ -59,7 +59,7 @@ function! AutoLoadCTagsAndCScope()
         endif
         if filereadable(dir . 'cscope.out')
             execute 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 ) 
-            echom 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 ) 
+            "echom 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 ) 
             let break = 1
         endif
         if filereadable(dir . 'tags')
