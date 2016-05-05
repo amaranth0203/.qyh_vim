@@ -94,10 +94,12 @@ nnoremap * *<S-n>:set hls<cr>zz
 if has( "win32" ) || has( "win16" )
     nnoremap <A-j> j
     nnoremap <A-k> k
+    nnoremap <A-\> :set hls<cr>
     set termencoding=gbk
 else
     nnoremap <esc>j j
     nnoremap <esc>k k
+    nnoremap <esc>\ :set hls<cr>
     set termencoding=utf-8
 endif
 nnoremap % %zz
