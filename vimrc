@@ -32,6 +32,9 @@ nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
+" for NERDTree
+nmap <leader>ne :NERDTree<cr>
+
 " for NERD Commenter
 au BufRead * :filetype plugin on
 let NERDSpaceDelims=1
@@ -43,6 +46,38 @@ au BufRead * :set formatoptions-=cro
 let g:airline#extensions#tabline#enabled = 1
 nmap <leader>1 :bp<cr>
 nmap <leader>2 :bn<cr>
+
+function! AutoLoadCTagsAndCScope()
+    let max = 10
+    let dir = getcwd( ).'/'
+    let i = 0
+    let break = 0
+    while isdirectory(dir) && i < max
+        if filereadable(dir . 'GTAGS')
+            execute 'cs add ' . dir . 'GTAGS ' . glob("`pwd`")
+            let break = 1
+        endif
+        if filereadable(dir . 'cscope.out')
+            execute 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 ) 
+            echom 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 ) 
+            let break = 1
+        endif
+        if filereadable(dir . 'tags')
+            execute 'set tags =' . dir . 'tags'
+            "echom dir.'tags'
+            let break = 1
+        endif
+        if break == 1
+            execute 'lcd ' . dir
+            break
+        endif
+        let dir = dir . '../'
+        let i = i + 1
+    endwhile
+endf
+nmap <F7> :call AutoLoadCTagsAndCScope()<CR>
+" call AutoLoadCTagsAndCScope()
+" http://vifix.cn/blog/vim-auto-load-ctags-and-cscope.html
 
 set showcmd
 set title
@@ -76,7 +111,6 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
-
 
 
 
