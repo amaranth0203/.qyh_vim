@@ -46,6 +46,8 @@ au BufRead * :set formatoptions-=cro
 let g:airline#extensions#tabline#enabled = 1
 nmap <leader>1 :bp<cr>
 nmap <leader>2 :bn<cr>
+let g:airline#extensions#tabline#left_sep = '-'
+let g:airline#extensions#tabline#right_sep = '-'
 
 function! AutoLoadCTagsAndCScope()
     let max = 10
