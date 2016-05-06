@@ -43,6 +43,8 @@ if has( "win32" ) || has( "win16" )
     nnoremap <A-\> :set hls<cr>
     nmap <A-p> :bp<cr>
     nmap <A-n> :bn<cr>
+    nmap <A-w> :bd<cr>
+    map! <A-q> <esc>
     set termencoding=gbk
 else
     nnoremap <esc>j j
@@ -50,10 +52,21 @@ else
     nnoremap <esc>\ :set hls<cr>
     nmap <esc>p :bp<cr>
     nmap <esc>n :bn<cr>
+    nmap <esc>w :bd<cr>
+    map! <esc>q <esc>
     set termencoding=utf-8
 endif
 nnoremap % %zz
 set nowrap
+fu! SaveSess( )
+    execute 'NERDTreeClose'
+    if has( "gui_running" )
+        execute 'mksession! ~/qyh_session_gvim.vim'
+    else
+        execute 'mksession! ~/qyh_session_vim.vim'
+    endif
+endfunction
+au VimLeave * call SaveSess( )
 
 " for Cscope
 nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>

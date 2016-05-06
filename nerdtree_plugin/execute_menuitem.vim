@@ -4,6 +4,9 @@
 "              executes system default application for file or directory
 " Maintainer:  Ivan Tkalin <itkalin at gmail dot com>
 " Last Change: 27 May, 2010
+"
+" hack in:     change the explorer to cmd /k cd /d to start a cmd window in
+"              windows by qiyunhu at 06 May, 2016
 " ============================================================================
 if exists("g:loaded_nerdtree_shell_exec_menuitem")
   finish
@@ -40,7 +43,7 @@ function! NERDTreeExecute()
     exe "silent !open ".args
     let ret= v:shell_error
   elseif has("win32") || has("win64")
-    exe "silent !start explorer ".shellescape(path,1)
+    exe "silent !start cmd /k cd /d ".shellescape(path,1)
   end
   let &shellslash=l:oldssl
   redraw!
