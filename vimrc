@@ -54,9 +54,9 @@ else
     nmap <esc>p :bp<cr>
     nmap <esc>n :bn<cr>
     nmap <esc>w :bd<cr>
-    map! <esc>q <esc>
-    vmap <esc>q <esc>
-    vmap <esc>q y:set nomagic<cr>/<C-R>"<cr>:set magic<cr><S-n>zz
+    map! <esc>q <C-c>
+    vmap <esc>q <C-c>
+    vmap <esc>f y:set nomagic<cr>/<C-R>"<cr>:set magic<cr><S-n>zz
     imap <esc>s <esc>:w<cr>
     nmap <esc>s :w<cr>
     set termencoding=utf-8
