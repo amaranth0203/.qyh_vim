@@ -35,6 +35,13 @@ nnoremap * *<S-n>zz
 nnoremap % %zz
 nmap <F7> :call AutoLoadCTagsAndCScope()<CR>
 nmap <C-w><C-w> :call CloseBufWithNERDTree( )<cr>
+nmap <C-w>1  :call Win_prop( 1 )<cr>
+nmap <C-w>`1 :call Win_prop( -1 )<cr>
+nmap <C-w>2  :call Win_prop( 2 )<cr>
+nmap <C-w>`2 :call Win_prop( -2 )<cr>
+nmap <C-w>3  :call Win_prop( 3 )<cr>
+nmap <C-w>`3 :call Win_prop( -3 )<cr>
+imap <C-cr> <C-c><S-o>
 if has( "win32" ) || has( "win16" )
     nnoremap <A-j> j
     nnoremap <A-k> k
@@ -80,6 +87,22 @@ fu! SaveSess( )
         execute 'mksession! ~/qyh_session_gvim.vim'
     else
         execute 'mksession! ~/qyh_session_vim.vim'
+    endif
+endfunction
+
+fu! Win_prop( param )
+    if a:param == 1
+        execute 'call libcallnr("vimtweak.dll", "SetAlpha", 200)'
+    elseif a:param == -1
+        execute 'call libcallnr("vimtweak.dll", "SetAlpha", 255)'
+    elseif a:param == 2
+        execute 'call libcallnr("vimtweak.dll", "EnableMaximize", 1)'
+    elseif a:param == -2
+        execute 'call libcallnr("vimtweak.dll", "EnableMaximize", 0)'
+    elseif a:param == 3
+        execute 'call libcallnr("vimtweak.dll", "EnableTopMost", 1)'
+    elseif a:param == -3
+        execute 'call libcallnr("vimtweak.dll", "EnableTopMost", 0)'
     endif
 endfunction
 
