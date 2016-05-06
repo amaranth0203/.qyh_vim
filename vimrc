@@ -41,8 +41,8 @@ if has( "win32" ) || has( "win16" )
     nmap <A-p> :bp<cr>
     nmap <A-n> :bn<cr>
     nmap <A-w> :bd<cr>
-    map! <A-q> <esc>
-    vmap <A-q> <esc>
+    map! <A-q> <C-c>
+    vmap <A-q> <C-c>
     vmap <A-f> y:set nomagic<cr>/<C-R>"<cr>:set magic<cr><S-n>zz
     imap <A-s> <esc>:w<cr>
     nmap <A-s> :w<cr>
