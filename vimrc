@@ -67,6 +67,7 @@ fu! CloseBufWithNERDTree( )
             execute "NERDTreeToggle"
             execute "bd"
             execute "NERDTreeToggle"
+            execute "wincmd w"
         endif
     else
         execute "bd"
