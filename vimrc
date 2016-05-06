@@ -34,10 +34,7 @@ nnoremap <c-\> :set nohlsearch<cr>
 nnoremap * *<S-n>zz
 nnoremap % %zz
 nmap <F7> :call AutoLoadCTagsAndCScope()<CR>
-nmap <C-Tab> :bn<cr>
-nmap <C-S-Tab> :bp<cr>
-nmap <C-w><C-w> :bd<cr>
-nmap <C-w><C-w> :bd<cr>
+nmap <C-w><C-w> :call CloseBufWithNERDTree( )<cr>
 if has( "win32" ) || has( "win16" )
     nnoremap <A-j> j
     nnoremap <A-k> k
@@ -63,6 +60,18 @@ else
     nmap <esc>s :w<cr>
     set termencoding=utf-8
 endif
+
+fu! CloseBufWithNERDTree( )
+    if exists( "t:NERDTreeBufName" )
+        if bufwinnr( t:NERDTreeBufName ) != -1
+            execute "NERDTreeToggle"
+            execute "bd"
+            execute "NERDTreeToggle"
+        endif
+    else
+        execute "bd"
+    endif
+endfunction
 
 fu! SaveSess( )
     execute 'NERDTreeClose'
