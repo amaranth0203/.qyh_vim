@@ -37,10 +37,13 @@ nmap <F7> :call AutoLoadCTagsAndCScope()<CR>
 nmap <C-Tab> :bn<cr>
 nmap <C-S-Tab> :bp<cr>
 nmap <C-w><C-w> :bd<cr>
+nmap <C-w><C-w> :bd<cr>
 if has( "win32" ) || has( "win16" )
     nnoremap <A-j> j
     nnoremap <A-k> k
     nnoremap <A-\> :set hls<cr>
+    nmap <A-h> :bp<cr>
+    nmap <A-l> :bn<cr>
     map! <A-q> <C-c>
     vmap <A-q> <C-c>
     vmap <A-f> y:set nomagic<cr>/<C-R>"<cr>:set magic<cr><S-n>zz
@@ -51,6 +54,8 @@ else
     nnoremap <esc>j j
     nnoremap <esc>k k
     nnoremap <esc>\ :set hls<cr>
+    nmap <esc>h :bp<cr>
+    nmap <esc>l :bn<cr>
     map! <esc>q <C-c>
     vmap <esc>q <C-c>
     vmap <esc>f y:set nomagic<cr>/<C-R>"<cr>:set magic<cr><S-n>zz
