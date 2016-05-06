@@ -1,7 +1,6 @@
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
-au VimEnter * call LoadSess( )
 colo desert
 let $LANG='zh_CN.UTF-8'
 syntax on
@@ -58,19 +57,10 @@ else
     map! <esc>q <esc>
     vmap <esc>q <esc>
     vmap <esc>q y:set nomagic<cr>/<C-R>"<cr>:set magic<cr><S-n>zz
-    imap <esc>s <esc>:w<cr>a
+    imap <esc>s <esc>:w<cr>
     nmap <esc>s :w<cr>
     set termencoding=utf-8
 endif
-
-fu! LoadSess( )
-    if has("unix")
-        let s:uname = system("uname")
-        if s:uname == "Linux"
-            execute 'source ~/qyh_session_vim.vim'
-        endif
-    endif
-endfunction
 
 fu! SaveSess( )
     execute 'NERDTreeClose'
