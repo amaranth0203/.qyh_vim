@@ -7,3 +7,7 @@ doc/tags
 .vim-flavor
 .netrwhist 
 .netrwhist 
+.pyc
+VIM_AUTO_RTP
+tmp/
+

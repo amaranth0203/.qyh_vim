@@ -1,9 +1,27 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.qyh_vim/bundle/Vundle.vim
+call vundle#begin('$USERPROFILE/.qyh_vim/bundle')
+
+Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+
+
+
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
+au VimEnter * :PluginInstall
+au VimEnter * :bd
 colo desert
 let $LANG='zh_CN.UTF-8'
 syntax on
+
+
 
 set encoding=utf-8
 set guifont=Consolas:h12:cANSI
@@ -176,4 +194,4 @@ let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME,
 " what is the name of the directory containing this file?
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
-let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+let &runtimepath = printf('%s,%s,%s/after,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath, s:portable)
