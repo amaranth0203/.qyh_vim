@@ -75,10 +75,10 @@ fu! CloseBufWithNERDTree( )
             execute "bd"
             execute "NERDTreeToggle"
             execute "wincmd w"
+            return 
         endif
-    else
-        execute "bd"
     endif
+    execute "bd"
 endfunction
 
 fu! SaveSess( )
