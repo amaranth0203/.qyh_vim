@@ -31,8 +31,8 @@ au VimLeave * call SaveSess( )
 au VimEnter * :e qyh.tmp.qyh.tmp
 au VimEnter * :bn
 au VimEnter * :bd qyh.tmp.qyh.tmp
+au VimEnter * :syntax on
 colo desert
-syntax on
 
 
 
