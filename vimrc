@@ -1,6 +1,5 @@
 let $LANG='zh_CN.UTF-8'
 
-
 " [+] bundle start
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -16,7 +15,6 @@ endif
 call vundle#end()            " required
 filetype plugin indent on    " required
 " [+] bundle end
-
 
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
