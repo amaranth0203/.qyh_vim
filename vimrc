@@ -19,8 +19,6 @@ filetype plugin indent on    " required
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
-"au VimEnter * :PluginInstall
-"au VimEnter * call Switch_to_leftest_buffer( )
 
 syntax on
 colo desert
@@ -45,6 +43,7 @@ set title
 set hlsearch
 set incsearch
 set nowrap
+set noautoindent
 
 map! <s-tab> <BS><BS><BS><BS>
 nnoremap <expr>j Qyh_j( ) 
@@ -86,12 +85,6 @@ else
     nmap <esc>s :w<cr>
     set termencoding=utf-8
 endif
-
-fu! Switch_to_leftest_buffer( )
-    execute 'e qyh.tmp.qyh.tmp'
-    execute 'bn'
-    execute 'bd qyh.tmp.qyh.tmp'
-endfunction
 
 fu! CloseBufWithNERDTree( )
     if exists( "t:NERDTreeBufName" )
@@ -189,12 +182,6 @@ nmap <leader>neb :Bookmark
 " for NERD Commenter
 filetype plugin on
 let NERDSpaceDelims=1
-
-" for airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = '-'
-let g:airline#extensions#tabline#right_sep = '-'
-set laststatus=2
 
 " set default 'runtimepath' (without ~/.vim folders)
 let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
