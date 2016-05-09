@@ -20,7 +20,7 @@ au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
 "au VimEnter * :PluginInstall
-au VimEnter * call Switch_to_leftest_buffer( )
+"au VimEnter * call Switch_to_leftest_buffer( )
 
 syntax on
 colo desert
