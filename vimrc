@@ -20,8 +20,10 @@ filetype plugin indent on    " required
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
-au VimEnter * :PluginInstall
-au VimEnter * :bd
+"au VimEnter * :PluginInstall
+au VimEnter * :e qyh.tmp.qyh.tmp
+au VimEnter * :bn
+au VimEnter * :bd qyh.tmp.qyh.tmp
 colo desert
 syntax on
 
