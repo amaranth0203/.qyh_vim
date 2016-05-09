@@ -1,6 +1,5 @@
 let $LANG='zh_CN.UTF-8'
 
-
 " [+] bundle start
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -11,52 +10,16 @@ else
     set rtp+=~/.qyh_vim/bundle/Vundle.vim
     call vundle#begin('~/.qyh_vim/bundle')
 endif
-    
-
 "Plugin 'VundleVim/Vundle.vim'
 "Plugin 'severin-lemaignan/vim-minimap'
-
 call vundle#end()            " required
 filetype plugin indent on    " required
 " [+] bundle end
 
-
-
-
-
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
-"au VimEnter * :PluginInstall
-au VimEnter * :e qyh.tmp.qyh.tmp
-au VimEnter * :bn
-au VimEnter * :bd qyh.tmp.qyh.tmp
-au VimEnter * :syntax on
-colo desert
-
-
-
-set encoding=utf-8
-set guifont=Consolas:h12:cANSI
-set linespace=0
-set guioptions-=m
-set guioptions-=T
-set nocompatible
-set expandtab
-set backspace=indent,eol,start
-set number
-set shiftwidth=4
-set tabstop=4
-set autochdir
-set ruler
-set nobackup
-set nowritebackup
-set noswapfile
-set showcmd
-set title
-set hlsearch
-set incsearch
-set nowrap
+au VimEnter * call Initial( )
 
 map! <s-tab> <BS><BS><BS><BS>
 nnoremap <expr>j Qyh_j( ) 
@@ -98,6 +61,35 @@ else
     nmap <esc>s :w<cr>
     set termencoding=utf-8
 endif
+
+fu! Initial( )
+    execute 'colo desert'
+    execute 'e qyh.tmp.qyh.tmp'
+    execute 'bn'
+    execute 'bd qyh.tmp.qyh.tmp'
+    execute 'syntax on'
+    execute 'set encoding=utf-8'
+    execute 'set guifont=Consolas:h12:cANSI'
+    execute 'set linespace=0'
+    execute 'set guioptions-=m'
+    execute 'set guioptions-=T'
+    execute 'set nocompatible'
+    execute 'set expandtab'
+    execute 'set backspace=indent,eol,start'
+    execute 'set number'
+    execute 'set shiftwidth=4'
+    execute 'set tabstop=4'
+    execute 'set autochdir'
+    execute 'set ruler'
+    execute 'set nobackup'
+    execute 'set nowritebackup'
+    execute 'set noswapfile'
+    execute 'set showcmd'
+    execute 'set title'
+    execute 'set hlsearch'
+    execute 'set incsearch'
+    execute 'set nowrap'
+endfunction
 
 fu! CloseBufWithNERDTree( )
     if exists( "t:NERDTreeBufName" )
