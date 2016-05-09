@@ -1,3 +1,7 @@
+let $LANG='zh_CN.UTF-8'
+
+
+" [+] bundle start
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.qyh_vim/bundle/Vundle.vim
@@ -7,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+" [+] bundle end
 
 
 
@@ -18,7 +23,6 @@ au VimLeave * call SaveSess( )
 au VimEnter * :PluginInstall
 au VimEnter * :bd
 colo desert
-let $LANG='zh_CN.UTF-8'
 syntax on
 
 
