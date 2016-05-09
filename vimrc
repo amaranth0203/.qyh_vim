@@ -11,31 +11,21 @@ else
     set rtp+=~/.qyh_vim/bundle/Vundle.vim
     call vundle#begin('~/.qyh_vim/bundle')
 endif
-    
-
 "Plugin 'VundleVim/Vundle.vim'
 "Plugin 'severin-lemaignan/vim-minimap'
-
 call vundle#end()            " required
 filetype plugin indent on    " required
 " [+] bundle end
-
-
-
 
 
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
 "au VimEnter * :PluginInstall
-au VimEnter * :e qyh.tmp.qyh.tmp
-au VimEnter * :bn
-au VimEnter * :bd qyh.tmp.qyh.tmp
-au VimEnter * :syntax on
+au VimEnter * call Switch_to_leftest_buffer( )
+
+syntax on
 colo desert
-
-
-
 set encoding=utf-8
 set guifont=Consolas:h12:cANSI
 set linespace=0
@@ -98,6 +88,12 @@ else
     nmap <esc>s :w<cr>
     set termencoding=utf-8
 endif
+
+fu! Switch_to_leftest_buffer( )
+    execute 'e qyh.tmp.qyh.tmp'
+    execute 'bn'
+    execute 'bd qyh.tmp.qyh.tmp'
+endfunction
 
 fu! CloseBufWithNERDTree( )
     if exists( "t:NERDTreeBufName" )
@@ -193,7 +189,7 @@ nmap <leader>nec :ClearBookmarks
 nmap <leader>neb :Bookmark 
 
 " for NERD Commenter
-au BufRead * :filetype plugin on
+filetype plugin on
 let NERDSpaceDelims=1
 
 " for airline
