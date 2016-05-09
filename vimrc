@@ -14,7 +14,7 @@ endif
     
 
 "Plugin 'VundleVim/Vundle.vim'
-Plugin 'severin-lemaignan/vim-minimap'
+"Plugin 'severin-lemaignan/vim-minimap'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
