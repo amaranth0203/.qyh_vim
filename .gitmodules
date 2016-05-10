@@ -1,6 +1,6 @@
 [submodule "bundle/vim-fugitive"]
 	branch = master
-    path = bundle/vim-fugitive
+	path = bundle/vim-fugitive
     url = git@github.com:tpope/vim-fugitive.git
 [submodule "bundle/vim-airline"]
 	branch = master
@@ -11,6 +11,5 @@
     path = bundle/vim-gitgutter
     url = git@github.com:airblade/vim-gitgutter.git
 [submodule "bundle/Vundle.vim"]
-	branch = master
-    path = bundle/Vundle.vim
-    url = git@github.com:VundleVim/Vundle.vim.git
+	path = bundle/Vundle.vim
+	url = git@github.com:VundleVim/Vundle.vim.git
