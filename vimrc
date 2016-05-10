@@ -10,8 +10,7 @@ else
     set rtp+=~/.qyh_vim/bundle/Vundle.vim
     call vundle#begin('~/.qyh_vim/bundle')
 endif
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'VundleVim/Vundle.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " [+] bundle end
@@ -19,16 +18,19 @@ filetype plugin indent on    " required
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
-"au VimEnter * :PluginInstall
-"au VimEnter * call Switch_to_leftest_buffer( )
 
 syntax on
 colo desert
 set encoding=utf-8
 set guifont=Consolas:h12:cANSI
+set guifont=Consolas_for_Powerline_FixedD:h12:cANSI
 set linespace=0
 set guioptions-=m
 set guioptions-=T
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
 set nocompatible
 set expandtab
 set backspace=indent,eol,start
@@ -42,12 +44,13 @@ set nowritebackup
 set noswapfile
 set showcmd
 set title
-set hlsearch
+  set hlsearch
 set incsearch
 set nowrap
+set noautoindent
 
 map! <s-tab> <BS><BS><BS><BS>
-nnoremap <expr>j Qyh_j( ) 
+nnoremap <expr>j Qyh_j( )
 nnoremap k k
 nnoremap <c-\> :set nohlsearch<cr>
 nnoremap * *<S-n>zz
@@ -73,6 +76,8 @@ if has( "win32" ) || has( "win16" )
     imap <A-s> <esc>:w<cr>
     nmap <A-s> :w<cr>
     set termencoding=gbk
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
 else
     nnoremap <esc>j j
     nnoremap <esc>k k
@@ -87,12 +92,6 @@ else
     set termencoding=utf-8
 endif
 
-fu! Switch_to_leftest_buffer( )
-    execute 'e qyh.tmp.qyh.tmp'
-    execute 'bn'
-    execute 'bd qyh.tmp.qyh.tmp'
-endfunction
-
 fu! CloseBufWithNERDTree( )
     if exists( "t:NERDTreeBufName" )
         if bufwinnr( t:NERDTreeBufName ) != -1
@@ -100,7 +99,7 @@ fu! CloseBufWithNERDTree( )
             execute "bd"
             execute "NERDTreeToggle"
             execute "wincmd w"
-            return 
+            return
         endif
     endif
     execute "bd"
@@ -149,8 +148,8 @@ fu! AutoLoadCTagsAndCScope()
             let break = 1
         endif
         if filereadable(dir . 'cscope.out')
-            execute 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 ) 
-            "echom 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 ) 
+            execute 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 )
+            "echom 'cs add ' . dir . 'cscope.out ' . strpart( dir , 0 , strlen( dir ) - 1 )
             let break = 1
         endif
         if filereadable(dir . 'tags')
@@ -183,18 +182,31 @@ nmap <leader>tl :TlistToggle<cr>
 " for NERDTree
 nmap <leader>ne :NERDTree<cr>
 nmap <leader>net :NERDTreeToggle<cr>
-nmap <leader>nec :ClearBookmarks 
-nmap <leader>neb :Bookmark 
+nmap <leader>nec :ClearBookmarks
+nmap <leader>neb :Bookmark
 
 " for NERD Commenter
 filetype plugin on
 let NERDSpaceDelims=1
 
 " for airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = '-'
-let g:airline#extensions#tabline#right_sep = '-'
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline_symbols = {}
+let g:airline_symbols.branch = "\u2b60"
+let g:airline_symbols.readonly = "\u2b64"
+let g:airline_symbols.linenr = "\u2b61"
+let g:airline_symbols.whitespace = "!"
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = "\u2b80"
+let g:airline_left_alt_sep = "\u2b81"
+let g:airline_right_sep = "\u2b82"
+let g:airline_right_alt_sep = "\u2b83"
+let g:airline#extensions#tabline#left_sep = "\u2b80"
+let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
 
 " set default 'runtimepath' (without ~/.vim folders)
 let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
