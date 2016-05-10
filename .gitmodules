@@ -10,3 +10,7 @@
 	branch = master
     path = bundle/vim-gitgutter
     url = git@github.com:airblade/vim-gitgutter.git
+[submodule "bundle/Vundle.vim"]
+	branch = master
+    path = bundle/Vundle.vim
+    url = git@github.com:VundleVim/Vundle.vim.git
