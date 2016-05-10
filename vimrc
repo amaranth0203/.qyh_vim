@@ -222,8 +222,8 @@ let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
 " for GitGutter
 nmap <leader>gt :GitGutterToggle<cr>
 nmap <leader>gh :GitGutterLineHighlightsToggle<cr>
-nmap <leader>gj :GitGutterNextHunk<cr>
-nmap <leader>gk :GitGutterPrevHunk<cr>
+nmap gj :GitGutterNextHunk<cr>
+nmap gk :GitGutterPrevHunk<cr>
 
 " set default 'runtimepath' (without ~/.vim folders)
 " let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
