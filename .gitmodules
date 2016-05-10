@@ -1,6 +1,10 @@
 [submodule "bundle/vim-fugitive"]
 	branch = master
+    path = bundle/vim-fugitive
 [submodule "bundle/vim-airline"]
 	branch = master
+    path = bundle/vim-airline
+    url = git@github.com:vim-airline/vim-airline.git
 [submodule "bundle/vim-gitgutter"]
 	branch = master
+    path = bundle/vim-gitgutter
