@@ -11,6 +11,9 @@ else
     call vundle#begin('~/.qyh_vim/bundle')
 endif
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " [+] bundle end
@@ -44,7 +47,7 @@ set nowritebackup
 set noswapfile
 set showcmd
 set title
-  set hlsearch
+set hlsearch
 set incsearch
 set nowrap
 set noautoindent
@@ -111,6 +114,14 @@ fu! SaveSess( )
         execute 'mksession! ~/qyh_session_gvim.vim'
     else
         execute 'mksession! ~/qyh_session_vim.vim'
+    endif
+endfunction
+
+fu! LoadSess( )
+    if has( "gui_running" )
+        execute 'source ~/qyh_session_gvim.vim'
+    else
+        execute 'source ~/qyh_session_vim.vim'
     endif
 endfunction
 
@@ -193,7 +204,7 @@ let NERDSpaceDelims=1
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_symbols = {}
 let g:airline_symbols.branch = "\u2b60"
@@ -208,9 +219,16 @@ let g:airline_right_alt_sep = "\u2b83"
 let g:airline#extensions#tabline#left_sep = "\u2b80"
 let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
 
+" for GitGutter
+nmap <leader>gt :GitGutterToggle<cr>
+nmap <leader>gh :GitGutterLineHighlightsToggle<cr>
+nmap <leader>gj :GitGutterNextHunk<cr>
+nmap <leader>gk :GitGutterPrevHunk<cr>
+
 " set default 'runtimepath' (without ~/.vim folders)
-let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+" let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
 " what is the name of the directory containing this file?
 let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
-let &runtimepath = printf('%s,%s,%s/after,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath, s:portable)
+" let &runtimepath = printf('%s,%s,%s/after,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath, s:portable)
+let &runtimepath = printf('%s,%s,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath )
