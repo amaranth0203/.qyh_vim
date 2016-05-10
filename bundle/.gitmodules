@@ -1,0 +1,6 @@
+[submodule "bundle/vim-fugitive"]
+	branch = master
+[submodule "bundle/vim-airline"]
+	branch = master
+[submodule "bundle/vim-gitgutter"]
+	branch = master
