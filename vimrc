@@ -18,9 +18,20 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " [+] bundle end
 
+" [+] debug start
+fu! Show( )
+    verbose set autoindent?
+    verbose set smartindent?
+    verbose set cindent?
+    verbose set indentexpr?
+endfunction
+nmap <leader>ss :call Show( )<cr>
+" [+] debug end
+
 au BufWritePre * :set binary | set noeol
 au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 syntax on
 colo desert
