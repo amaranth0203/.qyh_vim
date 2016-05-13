@@ -66,6 +66,8 @@ set noautoindent
 map! <s-tab> <BS><BS><BS><BS>
 nnoremap <expr>j Qyh_j( )
 nnoremap k k
+nnoremap <C-j> jjjjjjjj
+nnoremap <C-k> kkkkkkkk
 nnoremap <c-\> :set nohlsearch<cr>
 nnoremap * *<S-n>zz
 nnoremap % %zz
