@@ -233,7 +233,7 @@ let NERDSpaceDelims=1
 " for airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_symbols = {}
