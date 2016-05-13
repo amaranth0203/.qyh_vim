@@ -164,6 +164,13 @@ fu! Win_prop( param )
     endif
 endfunction
 
+fu! CallNERDTreeDesktop( )
+    if has( "win32" ) || has( "win16" )
+        execute 'cd ~/Desktop'
+    endif
+    execute 'NERDTreeToggle'
+endfunction
+
 fu! Qyh_j( )
     if line( '.' ) > winheight( 0 ) / 2
         return "j"
@@ -215,7 +222,7 @@ nmap <leader>tl :TlistToggle<cr>
 
 " for NERDTree
 nmap <leader>ne :NERDTree<cr>
-nmap <leader>net :NERDTreeToggle<cr>
+nmap <leader>net :call CallNERDTreeDesktop( )<cr>
 nmap <leader>nec :ClearBookmarks
 nmap <leader>neb :Bookmark
 
