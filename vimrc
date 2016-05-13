@@ -34,7 +34,7 @@ au VimLeave * call SaveSess( )
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 syntax on
-colo desert
+colo murphy
 set encoding=utf-8
 set guifont=Consolas:h12:cANSI
 set guifont=Consolas_for_Powerline_FixedD:h12:cANSI
@@ -250,6 +250,7 @@ let g:airline#extensions#tabline#left_sep = "\u2b80"
 let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
 
 " for GitGutter
+let g:gitgutter_enable = 0 
 nmap <leader>gt :GitGutterToggle<cr>
 nmap <leader>gh :GitGutterLineHighlightsToggle<cr>
 nmap gj :GitGutterNextHunk<cr>
