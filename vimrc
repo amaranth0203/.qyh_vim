@@ -77,7 +77,6 @@ nmap <C-w>2  :call Win_prop( 2 )<cr>
 nmap <C-w>`2 :call Win_prop( -2 )<cr>
 nmap <C-w>3  :call Win_prop( 3 )<cr>
 nmap <C-w>`3 :call Win_prop( -3 )<cr>
-imap <C-cr> <C-c><S-o>
 if has( "win32" ) || has( "win16" )
     nnoremap <A-j> j
     nnoremap <A-k> k
@@ -95,6 +94,7 @@ if has( "win32" ) || has( "win16" )
     nmap <A-p> "+p
     nmap <A-P> "+P
     vmap <A-p> "+P
+    imap <A-cr> <C-c><S-o>
     set termencoding=gbk
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
@@ -115,6 +115,7 @@ else
     nmap <esc>p "+p
     nmap <esc>P "+P
     vmap <esc>p "+P
+    imap <esc>cr <C-c><S-o>
     set termencoding=utf-8
 endif
 
