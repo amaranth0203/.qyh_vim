@@ -94,7 +94,7 @@ if has( "win32" ) || has( "win16" )
     nmap <A-p> "+p
     nmap <A-P> "+P
     vmap <A-p> "+P
-    imap <A-cr> <C-c><S-o>
+    imap <A-o> <C-c><S-o>
     set termencoding=gbk
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
@@ -115,7 +115,7 @@ else
     nmap <esc>p "+p
     nmap <esc>P "+P
     vmap <esc>p "+P
-    imap <esc>cr <C-c><S-o>
+    imap <esc>o <C-c><S-o>
     set termencoding=utf-8
 endif
 
