@@ -181,6 +181,7 @@ fu! Qyh_j( )
         return "j"
     else
         return "j"
+    endif
 endfunction
 
 fu! AutoLoadCTagsAndCScope()
