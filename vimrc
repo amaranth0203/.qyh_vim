@@ -3,13 +3,20 @@ let $LANG='zh_CN.UTF-8'
 " [+] bundle start
 set nocompatible              " be iMproved, required
 filetype off                  " required
-if has( "win32" ) || has( "win16" )
-    set rtp+=$USERPROFILE/.qyh_vim/bundle/Vundle.vim
-    call vundle#begin('$USERPROFILE/.qyh_vim/bundle')
-else
-    set rtp+=~/.qyh_vim/bundle/Vundle.vim
-    call vundle#begin('~/.qyh_vim/bundle')
-endif
+
+let $rc_folder = expand('<sfile>:p:h')
+set rtp+=$rc_folder/bundle/Vundle.vim
+call vundle#begin('$rc_folder/bundle')
+"if has( "win32" ) || has( "win16" )
+"    set rtp+=$USERPROFILE/.qyh_vim/bundle/Vundle.vim
+"    call vundle#begin('$USERPROFILE/.qyh_vim/bundle')
+"elseif has( 'win32unix' )
+"    set rtp+=~/.qyh_vim/bundle/Vundle.vim
+"    call vundle#begin('~/.qyh_vim/bundle')
+"else
+"    set rtp+=~/.qyh_vim/bundle/Vundle.vim
+"    call vundle#begin('~/.qyh_vim/bundle')
+"endif
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
