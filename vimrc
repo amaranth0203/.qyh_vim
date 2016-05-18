@@ -33,7 +33,7 @@ au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 syntax on
 colo murphy
 set encoding=utf-8
-set guifont=Consolas:h12:cANSI
+"set guifont=Consolas:h12:cANSI
 set guifont=Consolas_for_Powerline_FixedD:h12:cANSI
 set linespace=0
 set guioptions-=m
@@ -74,7 +74,7 @@ nmap <C-w>2  :call Win_prop( 2 )<cr>
 nmap <C-w>`2 :call Win_prop( -2 )<cr>
 nmap <C-w>3  :call Win_prop( 3 )<cr>
 nmap <C-w>`3 :call Win_prop( -3 )<cr>
-if has( "win32" ) || has( "win16" )
+if has( "win32" ) || has( "win16" ) 
     nnoremap <A-j> j
     nnoremap <A-k> k
     nnoremap <A-\> :set hls<cr>
@@ -117,7 +117,11 @@ else
     imap <esc>o <C-c><S-o>
     imap <esc>h <C-c>bi
     imap <esc>l <C-c>ea
-    set termencoding=utf-8
+    if has( "win32unix" )
+        set termencoding=gbk
+    else
+        set termencoding=utf-8
+    endif
 endif
 
 fu! CloseBufWithNERDTree( )
