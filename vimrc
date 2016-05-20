@@ -33,6 +33,7 @@ au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 syntax on
 colo murphy
 set encoding=utf-8
+set fileencodings=utf-8,gb2312,gbk,gb18030
 "set guifont=Consolas:h12:cANSI
 set guifont=Consolas_for_Powerline_FixedD:h12:cANSI
 set linespace=-2
@@ -198,7 +199,7 @@ fu! AutoLoadCTagsAndCScope()
             let break = 1
         endif
         if filereadable(dir . 'tags')
-            execute 'set tags =' . dir . 'tags'
+            execute 'set tags +=' . dir . 'tags'
             "echom dir.'tags'
             let break = 1
         endif
