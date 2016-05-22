@@ -261,6 +261,10 @@ nmap <leader>gh :GitGutterLineHighlightsToggle<cr>
 nmap gj :GitGutterNextHunk<cr>
 nmap gk :GitGutterPrevHunk<cr>
 
+" for syntastic
+" let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+let g:syntastic_python_checkers = ['python', 'pylint -E']
+
 " set default 'runtimepath' (without ~/.vim folders)
 " let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
 " what is the name of the directory containing this file?
