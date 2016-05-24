@@ -61,6 +61,7 @@ set incsearch
 set nowrap
 set noautoindent
 set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175,a:blinkwait100-blinkoff100-blinkon100
+set dir-=.
 
 map! <s-tab> <BS><BS><BS><BS>
 nnoremap <expr>j Qyh_j( )
