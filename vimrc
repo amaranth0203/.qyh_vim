@@ -21,6 +21,7 @@ fu! Show( )
     verbose set smartindent?
     verbose set cindent?
     verbose set indentexpr?
+    verbose set expandtab?
 endfunction
 nmap <leader>ss :call Show( )<cr>
 " [+] debug end
