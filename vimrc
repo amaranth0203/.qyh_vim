@@ -257,7 +257,7 @@ let g:airline#extensions#tabline#left_sep = "\u2b80"
 let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
 
 " for GitGutter
-let g:gitgutter_enable = 0 
+let g:gitgutter_enabled = 0 
 nmap <leader>gt :GitGutterToggle<cr>
 nmap <leader>gh :GitGutterLineHighlightsToggle<cr>
 nmap gj :GitGutterNextHunk<cr>
