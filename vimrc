@@ -263,7 +263,7 @@ nmap gj :GitGutterNextHunk<cr>
 nmap gk :GitGutterPrevHunk<cr>
 
 " for syntastic
-" let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['asm'] }
 let g:syntastic_python_checkers = ['python', 'pylint -E']
 
 " set default 'runtimepath' (without ~/.vim folders)
