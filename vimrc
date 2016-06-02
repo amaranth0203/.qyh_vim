@@ -32,7 +32,6 @@ au VimLeave * call SaveSess( )
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 syntax on
-colo murphy
 set encoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,gb18030
 "set guifont=Consolas:h12:cANSI
@@ -274,3 +273,8 @@ let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 " let &runtimepath = printf('%s,%s,%s/after,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath, s:portable)
 let &runtimepath = printf('%s,%s,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath )
+if has( "gui_running" )
+    colo monokai
+else
+    colo murphy
+endif
