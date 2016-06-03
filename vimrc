@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " [+] bundle end
@@ -254,6 +255,7 @@ let g:airline_right_sep = "\u2b82"
 let g:airline_right_alt_sep = "\u2b83"
 let g:airline#extensions#tabline#left_sep = "\u2b80"
 let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
+let g:airline_theme = "distinguished"
 
 " for GitGutter
 let g:gitgutter_enabled = 0 
@@ -273,8 +275,4 @@ let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 " let &runtimepath = printf('%s,%s,%s/after,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath, s:portable)
 let &runtimepath = printf('%s,%s,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath )
-if has( "gui_running" )
-    colo monokai
-else
-    colo murphy
-endif
+colo monokai
