@@ -5,14 +5,14 @@
 " this theme was shamelessly created by modifying
 " the Ubaryd airline theme.
 
-let s:gray    = [160, '#df0000']
-let s:golden  = [160, '#df0000']
-let s:pink    = [160, '#df0000']
-let s:blue    = [160, '#df0000']
-let s:orange  = [ 52, '#5f0000']
-let s:outerfg = [ 52, '#5f0000']
-let s:innerbg = [ 52, '#5f0000']
-let s:middle  = ['#ffffff', '#870000', 15, 88]
+let s:gray    = [245, '#8a8a8a']
+let s:golden  = [143, '#afaf5f']
+let s:pink    = [131, '#af5f5f']
+let s:blue    = [ 67, '#5f87af']
+let s:orange  = [166, '#d75f00']
+let s:outerfg = [ 16, '#000000']
+let s:innerbg = [234, '#1c1c1c']
+let s:middle  = ['#bcbcbc', '#444444', 250, 238]
 
 " Normal mode
 let s:N1 = [s:outerfg[1], s:gray[1], s:outerfg[0], s:gray[0]]

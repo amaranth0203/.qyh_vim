@@ -77,6 +77,8 @@ nmap <C-w>2  :call Win_prop( 2 )<cr>
 nmap <C-w>`2 :call Win_prop( -2 )<cr>
 nmap <C-w>3  :call Win_prop( 3 )<cr>
 nmap <C-w>`3 :call Win_prop( -3 )<cr>
+nmap <leader>b :call Blood_mode( "on" )<cr>
+nmap <leader>nb :call Blood_mode( "off" )<cr>
 if has( "win32" ) || has( "win16" ) 
     nnoremap <A-j> j
     nnoremap <A-k> k
@@ -215,6 +217,16 @@ fu! AutoLoadCTagsAndCScope()
     endwhile
 endf
 
+fu! Blood_mode( param )
+    if a:param == 'on'
+        execute 'AirlineTheme distinguished_blood'
+        execute 'colo monokai_blood'
+    elseif a:param == 'off'
+        execute 'AirlineTheme distinguished'
+        execute 'colo monokai'
+    endif
+endf
+
 " for Cscope
 nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
@@ -276,4 +288,4 @@ let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 " let &runtimepath = printf('%s,%s,%s/after,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath, s:portable)
 let &runtimepath = printf('%s,%s,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath )
-colo monokai_blood
+colo monokai
