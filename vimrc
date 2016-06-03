@@ -96,6 +96,7 @@ if has( "win32" ) || has( "win16" )
     nmap <A-P> "+P
     vmap <A-p> "+P
     imap <A-o> <C-c><S-o>
+    nmap <A-o> <S-o>
     imap <A-h> <C-c>bi
     imap <A-l> <C-c>ea
     set termencoding=gbk
@@ -119,6 +120,7 @@ else
     nmap <esc>P "+P
     vmap <esc>p "+P
     imap <esc>o <C-c><S-o>
+    nmap <esc>o <S-o>
     imap <esc>h <C-c>bi
     imap <esc>l <C-c>ea
     set termencoding=utf-8
@@ -275,4 +277,4 @@ let s:portable = expand('<sfile>:p:h')
 " add the directory to 'runtimepath'
 " let &runtimepath = printf('%s,%s,%s/after,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath, s:portable)
 let &runtimepath = printf('%s,%s,~/.qyh_vim/bundle/Vundle.vim', s:portable, &runtimepath )
-colo monokai
+colo monokai_blood
