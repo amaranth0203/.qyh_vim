@@ -221,9 +221,11 @@ fu! Blood_mode( param )
     if a:param == 'on'
         execute 'AirlineTheme distinguished_blood'
         execute 'colo monokai_blood'
+        execute 'AirlineRefresh'
     elseif a:param == 'off'
         execute 'AirlineTheme distinguished'
         execute 'colo monokai'
+        execute 'AirlineRefresh'
     endif
 endf
 
