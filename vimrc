@@ -276,6 +276,10 @@ let g:airline_theme = "distinguished"
 
 " for GitGutter
 let g:gitgutter_enabled = 0 
+if has("win32unix")
+else
+    let g:gitgutter_git_executable="D:\\cygwin64\\bin\\git.exe"
+endif
 nmap <leader>gt :GitGutterToggle<cr>
 nmap <leader>gh :GitGutterLineHighlightsToggle<cr>
 nmap gj :GitGutterNextHunk<cr>
