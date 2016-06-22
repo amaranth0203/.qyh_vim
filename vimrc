@@ -26,8 +26,8 @@ endfunction
 nmap <leader>ss :call Show( )<cr>
 " [+] debug end
 
-au BufWritePre * :set binary | set noeol
-au BufWritePost * :set nobinary | set eol
+"au BufWritePre * :set binary | set noeol
+"au BufWritePost * :set nobinary | set eol
 au VimLeave * call SaveSess( )
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
