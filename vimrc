@@ -33,7 +33,7 @@ au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 syntax on
 set encoding=utf-8
-set fileencodings=utf-8,gb2312,gbk,gb18030
+set fileencodings=utf-8,gb2312,gbk,gb18030,latin-1
 "set guifont=Consolas:h12:cANSI
 set guifont=Consolas_for_Powerline_FixedD:h12:cANSI
 set linespace=-2
