@@ -85,8 +85,8 @@ if has( "win32" ) || has( "win16" )
     nnoremap <A-\> :set hls<cr>
     nmap <A-h> :bp<cr>
     nmap <A-l> :bn<cr>
-    map! <A-q> <C-c>
-    vmap <A-q> <C-c>
+    map! <A-c> <C-c>
+    vmap <A-c> <C-c>
     vmap <A-f> y:set nomagic<cr>/<C-R>"<cr>:set magic<cr><S-n>zz
     imap <A-s> <esc>:w<cr>
     nmap <A-s> :w<cr>
@@ -110,8 +110,8 @@ else
     nnoremap <esc>\ :set hls<cr>
     nmap <esc>h :bp<cr>
     nmap <esc>l :bn<cr>
-    map! <esc>q <C-c>
-    vmap <esc>q <C-c>
+    map! <esc>c <C-c>
+    vmap <esc>c <C-c>
     vmap <esc>f y:set nomagic<cr>/<C-R>"<cr>:set magic<cr><S-n>zz
     imap <esc>s <esc>:w<cr>
     nmap <esc>s :w<cr>
